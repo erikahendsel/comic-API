@@ -7,20 +7,21 @@ const app = express();
 app.listen(3000, () => console.log("listening at 3000"));
 app.use(express.static("public"));
 
-console.log(process.env);
-
 //Get function from another file: https://www.stanleyulili.com/node/node-modules-learn-how-to-import-and-use-functions-from-another-file/
 
 const publickey = process.env.PUBLIC_API_KEY;
 const privatekey = process.env.PRIVATE_API_KEY;
+const format = "hardcover";
 const ts = new Date().getTime();
 const stringToHash = ts + privatekey + publickey;
 const hash = md5_hashing.MD5(stringToHash);
-const baseUrl = "https://gateway.marvel.com:443/v1/public/characters";
-const limit = 20;
+const baseUrl = "http://gateway.marvel.com/v1/public/comics";
+const limit = 100;
 const url =
   baseUrl +
-  "?limit=" +
+  "?format=" +
+  format +
+  "&limit=" +
   limit +
   "&ts=" +
   ts +
