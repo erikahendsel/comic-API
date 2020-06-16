@@ -1,0 +1,22 @@
+.user-navigation {
+  width: 100%;
+  height: 55px;
+  background-color: $navigation-color;
+  position: relative;
+
+  .__profile {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      text-decoration: none;
+      align-items: center;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,9 +1,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.user-navigation {
+  width: 100%;
+  height: 55px;
+  background-color: #2f2f2f;
+  position: relative;
+}
+
+.user-navigation .__profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-navigation .__profile a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+}
+
 .menu {
   position: fixed;
   background-color: #2f2f2f;
   width: 100%;
-  height: 65px;
+  height: 55px;
   bottom: 0;
 }
 
