@@ -18,7 +18,7 @@ const stringToHash = ts + privatekey + publickey;
 const hash = md5_hashing.MD5(stringToHash);
 const baseUrl = "http://gateway.marvel.com/v1/public/comics";
 const mainLimit = 100;
-const latestComicsLimit = 3;
+const latestComicsLimit = 4;
 const main_url =
   baseUrl +
   "?format=" +

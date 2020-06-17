@@ -11,15 +11,15 @@ latestComics();
 
 function showLatestComics(data) {
   data.forEach((element) => {
-    const apiComicTitle = element.title;
+    // const apiComicTitle = element.title;
     const apiComicImages = element.images;
     const singleComicContainer = document.createElement("div");
     const webComicTitle = document.createElement("p");
     const webComicImage = document.createElement("img");
     singleComicContainer.classList.add("comic-container");
-    webComicTitle.classList.add("comic-title");
-    webComicTitle.textContent = apiComicTitle;
-    singleComicContainer.appendChild(webComicTitle);
+    // webComicTitle.classList.add("comic-title");
+    // webComicTitle.textContent = apiComicTitle;
+    // singleComicContainer.appendChild(webComicTitle);
     apiComicImages.forEach((image) => {
       //   console.log(image.path + "." + image.extension);
       webComicImage.classList.add("comic-image");
