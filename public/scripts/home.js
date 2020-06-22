@@ -1,8 +1,6 @@
 const allComics = document.querySelector(".comics");
 const comicList = document.querySelector(".comic-container");
 
-comicList.addEventListener("click", (async = () => {}));
-
 async function getComics() {
   const api_url = `/comics`;
   const response = await fetch(api_url);
@@ -11,16 +9,17 @@ async function getComics() {
   showAllComics(comic_results);
 }
 
-async function openComic(event) {
+function openComic(event) {
   console.log(event.target);
 }
+getComics();
 
-async function main() {
-  await getComics();
-  await openComic();
-}
+// async function main() {
+//   await getComics();
+//   await openComic();
+// }
 
-main();
+// main();
 
 function showAllComics(data) {
   data.forEach((element) => {
@@ -40,5 +39,7 @@ function showAllComics(data) {
     singleComicContainer.appendChild(webComicTitle);
 
     allComics.appendChild(singleComicContainer);
+
+    singleComicContainer.addEventListener("click", openComic);
   });
 }
