@@ -31,28 +31,8 @@ const main_url =
   publickey +
   "&hash=" +
   hash;
-const latestComics_url =
-  baseUrl +
-  "?format=" +
-  format +
-  "&orderBy=" +
-  orderBy +
-  "&limit=" +
-  latestComicsLimit +
-  "&ts=" +
-  ts +
-  "&apikey=" +
-  publickey +
-  "&hash=" +
-  hash;
-app.get("/comic", async (request, response) => {
+app.get("/comics", async (request, response) => {
   const api_url = `${main_url}`;
-  const fetch_response = await fetch(api_url);
-  const json = await fetch_response.json();
-  response.json(json);
-});
-app.get("/latest-comics", async (request, response) => {
-  const api_url = `${latestComics_url}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);

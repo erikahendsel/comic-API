@@ -1,7 +1,7 @@
 @import "variables";
-@import "usernav";
 @import "menu";
-@import "latestComics";
+@import "usernav";
+@import "allcomics";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
@@ -14,12 +14,6 @@ body {
   height: 100%;
   font-family: "Poppins", sans-serif;
   margin-bottom: 55px;
-  background-color: #130121;
+  background-color: $main-bg;
   color: #fff;
-}
-.comic-container {
-  .comic-image {
-    width: 90%;
-    height: auto;
-  }
 }

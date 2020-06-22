@@ -1,31 +1,44 @@
-const allComics = document.querySelector(".latest-comics");
-async function latestComics() {
-  const latest_url = `/latest-comics`;
-  const latestResponse = await fetch(latest_url);
-  const latestComic_json = await latestResponse.json();
-  const comic_results = latestComic_json.data.results;
-  console.log(latestComic_json);
-  showLatestComics(comic_results);
-}
-latestComics();
+const allComics = document.querySelector(".comics");
+const comicList = document.querySelector(".comic-container");
 
-function showLatestComics(data) {
+comicList.addEventListener("click", (async = () => {}));
+
+async function getComics() {
+  const api_url = `/comics`;
+  const response = await fetch(api_url);
+  const comic_json = await response.json();
+  const comic_results = comic_json.data.results;
+  showAllComics(comic_results);
+}
+
+async function openComic(event) {
+  console.log(event.target);
+}
+
+async function main() {
+  await getComics();
+  await openComic();
+}
+
+main();
+
+function showAllComics(data) {
   data.forEach((element) => {
-    // const apiComicTitle = element.title;
+    const apiComicTitle = element.title;
     const apiComicImages = element.images;
     const singleComicContainer = document.createElement("div");
     const webComicTitle = document.createElement("p");
     const webComicImage = document.createElement("img");
-    singleComicContainer.classList.add("comic-container");
-    // webComicTitle.classList.add("comic-title");
-    // webComicTitle.textContent = apiComicTitle;
-    // singleComicContainer.appendChild(webComicTitle);
     apiComicImages.forEach((image) => {
-      //   console.log(image.path + "." + image.extension);
       webComicImage.classList.add("comic-image");
       webComicImage.src = `${image.path}.${image.extension}`;
       singleComicContainer.appendChild(webComicImage);
     });
+    singleComicContainer.classList.add("comic-container");
+    webComicTitle.classList.add("comic-title");
+    webComicTitle.textContent = apiComicTitle;
+    singleComicContainer.appendChild(webComicTitle);
+
     allComics.appendChild(singleComicContainer);
   });
 }
