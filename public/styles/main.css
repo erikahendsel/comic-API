@@ -111,10 +111,17 @@
   width: 60px;
   height: auto;
   margin-right: 10px;
+  pointer-events: none;
 }
 
-.comic-container .comic-title {
+.comic-container .comic-title,
+.comic-container .comic-price {
   font-size: 14px;
+  pointer-events: none;
+}
+
+.comic-container .comic-text-container {
+  pointer-events: none;
 }
 
 * {
