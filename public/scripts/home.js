@@ -52,6 +52,5 @@ function showAllComics(data) {
     singleComicContainer.addEventListener("click", function () {
       openComic(apiComicID);
     });
-    // singleComicContainer.addEventListener("click", openComic);
   });
 }
