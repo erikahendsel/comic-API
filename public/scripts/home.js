@@ -11,7 +11,8 @@ async function getComics() {
 
 function openComic(event) {
   console.log(event);
-  window.open(`comic-id.html?${event}`);
+  window.open(`comic-id.html#${event}`, "_self");
+  return event;
 }
 getComics();
 
