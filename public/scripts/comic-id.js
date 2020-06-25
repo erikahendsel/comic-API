@@ -1,4 +1,4 @@
-const comicContainer = document.querySelector(".single-comic-container");
+const comicMainContainer = document.querySelector(".single-comic-container");
 const idFromUrl = window.location.hash.substring(1);
 
 async function getSingleComic() {
@@ -18,6 +18,10 @@ function singleComicDetails(data) {
     const singleComicPrice = comic.prices;
     const singleComicDetails = comic.urls;
     const singleComicPageCount = comic.pageCount;
+    const comicSubContainer = document.createElement("div");
+    const comicTextContainer = document.createElement("div");
+    const comicHeadingContainer = document.createElement("div");
+    const comicImageContainer = document.createElement("div");
     const comicImage = document.createElement("img");
     const comicTitle = document.createElement("p");
     const comicCreators = document.createElement("p");
@@ -25,40 +29,51 @@ function singleComicDetails(data) {
     const comicPageCount = document.createElement("p");
     const comicOnSaleDate = document.createElement("p");
     const comicDetails = document.createElement("a");
+    comicTextContainer.classList.add("comic-text-container");
 
+    comicTitle.classList.add("comic-title");
     comicTitle.textContent = singleComicTitle;
-    comicPageCount.textContent = `Page count: ${singleComicPageCount} pages`;
+    comicHeadingContainer.appendChild(comicTitle);
+    comicMainContainer.appendChild(comicHeadingContainer);
+    comicMainContainer.appendChild(comicSubContainer);
+    comicSubContainer.appendChild(comicImageContainer);
+    comicSubContainer.classList.add("comic-sub-container");
+    comicImageContainer.classList.add("comic-image-container");
+    comicPrice.classList.add("comic-price");
 
     singleComicImage.forEach((image) => {
       comicImage.classList.add("single-comic-image");
       comicImage.src = `${image.path}.${image.extension}`;
-      comicContainer.appendChild(comicImage);
+      comicImageContainer.appendChild(comicImage);
     });
-    comicContainer.appendChild(comicTitle);
+    comicSubContainer.appendChild(comicTextContainer);
 
     singleComicCreators.forEach((item) => {
       comicCreators.textContent = `Creator: ${item.name}`;
-      comicContainer.appendChild(comicCreators);
+      comicHeadingContainer.appendChild(comicCreators);
     });
+    singleComicPrice.forEach((price) => {
+      comicPrice.textContent = `$${price.price}`;
+      comicTextContainer.appendChild(comicPrice);
+    });
+
+    comicTextContainer.appendChild(comicPageCount);
+    comicPageCount.textContent = `Page count: ${singleComicPageCount} pages`;
+
     singleComicOnSaleDate.forEach((saleDate) => {
       if (saleDate.type === "onsaleDate") {
         const removeTimeFromDate = saleDate.date.split("T")[0];
         comicOnSaleDate.textContent = `Published: ${removeTimeFromDate}`;
-        comicContainer.appendChild(comicOnSaleDate);
+        comicTextContainer.appendChild(comicOnSaleDate);
       } else {
         return;
       }
-    });
-    comicContainer.appendChild(comicPageCount);
-    singleComicPrice.forEach((price) => {
-      comicPrice.textContent = `Price: ${price.price}`;
-      comicContainer.appendChild(comicPrice);
     });
     singleComicDetails.forEach((detail) => {
       comicDetails.setAttribute("href", detail.url);
       comicDetails.target = "_blank";
       comicDetails.innerHTML = `Click here for this comic summary`;
-      comicContainer.appendChild(comicDetails);
+      comicTextContainer.appendChild(comicDetails);
     });
   });
 }

@@ -124,6 +124,39 @@
   pointer-events: none;
 }
 
+.single-comic-container {
+  margin: 1em;
+}
+
+.single-comic-container .comic-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.single-comic-container .comic-sub-container .comic-image-container {
+  padding: 1em 0 0 0;
+}
+
+.single-comic-container .comic-sub-container .comic-image-container .single-comic-image {
+  display: block;
+  width: 40%;
+  height: auto;
+  margin-right: 10px;
+  pointer-events: none;
+  margin: 0 auto;
+}
+
+.single-comic-container .comic-sub-container .comic-text-container .comic-price {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: -3px;
+  margin-bottom: 10px;
+}
+
+.single-comic-container .comic-sub-container .comic-text-container a {
+  color: #e6ad53;
+}
+
 * {
   margin: 0;
   padding: 0;
