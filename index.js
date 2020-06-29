@@ -20,7 +20,7 @@ const baseUrl = "https://gateway.marvel.com/v1/public/comics";
 const mainLimit = 100;
 const hashedFinalKey = "&ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;
 const main_url =
-  baseUrl + "?format=" + format + "&limit=" + mainLimit + hashedFinalKey;
+  baseUrl + "?orderBy=-focDate" + "&limit=" + mainLimit + hashedFinalKey;
 // const id_url =
 //   // https://gateway.marvel.com:443/v1/public/comics/26620?apikey=69a78b471e06634e6749f89614ce0888
 //   baseUrl + comicID123 + "?ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;

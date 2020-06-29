@@ -30,6 +30,7 @@ function singleComicDetails(data) {
     const comicOnSaleDate = document.createElement("p");
     const comicDetails = document.createElement("a");
     comicTextContainer.classList.add("comic-text-container");
+    comicImage.classList.add("single-comic-image");
 
     comicTitle.classList.add("comic-title");
     comicTitle.textContent = singleComicTitle;
@@ -41,11 +42,16 @@ function singleComicDetails(data) {
     comicImageContainer.classList.add("comic-image-container");
     comicPrice.classList.add("comic-price");
 
-    singleComicImage.forEach((image) => {
-      comicImage.classList.add("single-comic-image");
-      comicImage.src = `${image.path}.${image.extension}`;
+    if (singleComicImage.length === 0) {
+      comicImage.src = `assets/images/no-image.jpg`;
       comicImageContainer.appendChild(comicImage);
-    });
+    } else {
+      singleComicImage.forEach((image) => {
+        comicImage.src = `${image.path}.${image.extension}`;
+        comicImageContainer.appendChild(comicImage);
+      });
+    }
+
     comicSubContainer.appendChild(comicTextContainer);
 
     singleComicCreators.forEach((item) => {
