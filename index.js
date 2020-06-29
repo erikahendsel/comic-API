@@ -41,7 +41,7 @@ app.get("/id/:comicid", async (request, response) => {
 app.get("/search/:search", async (request, response) => {
   const search = request.params.search;
   console.log(search);
-  const api_url = `${baseUrl}/?title=${search}&${hashedFinalKey}`;
+  const api_url = `${baseUrl}?titleStartsWith=${search}&limit=${mainLimit}&${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);
