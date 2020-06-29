@@ -1,12 +1,11 @@
 const express = require("express");
 const { request } = require("express");
 const fetch = require("node-fetch");
+const MD5 = require("md5");
 require("dotenv").config();
-const md5_hashing = require("./md5.js");
 const app = express();
 app.listen(3000, () => console.log("listening at 3000"));
 app.use(express.static("public"));
-
 //Get function from another file: https://www.stanleyulili.com/node/node-modules-learn-how-to-import-and-use-functions-from-another-file/
 
 const publickey = process.env.PUBLIC_API_KEY;
@@ -15,7 +14,7 @@ const format = "hardcover";
 const orderBy = "-focDate";
 const ts = new Date().getTime();
 const stringToHash = ts + privatekey + publickey;
-const hash = md5_hashing.MD5(stringToHash);
+const hash = MD5(stringToHash);
 const baseUrl = "https://gateway.marvel.com/v1/public/comics";
 const mainLimit = 100;
 const hashedFinalKey = "&ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;
