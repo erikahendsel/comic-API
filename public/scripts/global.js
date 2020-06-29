@@ -19,10 +19,19 @@ function comicList(data) {
     const webComicPrice = document.createElement("p");
     singleComicTextContainer.classList.add("comic-text-container");
 
+    // console.log(apiComicImages.length);
+
     apiComicImages.forEach((image) => {
       webComicImage.classList.add("comic-image");
-      webComicImage.src = `${image.path}.${image.extension}`;
-      singleComicContainer.appendChild(webComicImage);
+      if (apiComicImages.length === 0) {
+        // webComicImage.src = `assets/images/no-image.jpg`;
+        // singleComicContainer.appendChild(webComicImage);
+        console.log("No image available", apiComicImages.length);
+      } else {
+        webComicImage.src = `${image.path}.${image.extension}`;
+        singleComicContainer.appendChild(webComicImage);
+        console.log(apiComicImages.length);
+      }
     });
 
     singleComicContainer.classList.add("comic-container", `id-${apiComicID}`);

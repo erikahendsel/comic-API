@@ -15,6 +15,7 @@ async function getSingleComic(event) {
   const comicData = comic_json.data;
   comicList(comic_results);
   totalResults(comic_json.data.total);
+  console.log(comicData);
   // console.log(comic_json.data.total);
 }
 
