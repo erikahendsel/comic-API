@@ -38,3 +38,12 @@ app.get("/id/:comicid", async (request, response) => {
   response.json(json);
   console.log(api_url);
 });
+app.get("/search/:search", async (request, response) => {
+  const search = request.params.search;
+  console.log(search);
+  const api_url = `${baseUrl}/?title=${search}&${hashedFinalKey}`;
+  const fetch_response = await fetch(api_url);
+  const json = await fetch_response.json();
+  response.json(json);
+  console.log(api_url);
+});
