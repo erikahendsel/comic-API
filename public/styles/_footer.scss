@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  .__block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    div {
+      padding: 0.6em 0.3em;
+      width: 100%;
+      box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+      font-size: 1rem;
+      a {
+        color: $link-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
