@@ -23,8 +23,10 @@ const main_url =
 // const id_url =
 //   // https://gateway.marvel.com:443/v1/public/comics/26620?apikey=69a78b471e06634e6749f89614ce0888
 //   baseUrl + comicID123 + "?ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;
-app.get("/comics", async (request, response) => {
-  const api_url = `${main_url}`;
+app.get("/comics/:offset", async (request, response) => {
+  const requestOffset = request.params.offset;
+  console.log(requestOffset);
+  const api_url = `${baseUrl}?orderBy=${orderBy}&limit=${mainLimit}&offset=${requestOffset}${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);
