@@ -9,3 +9,18 @@ $main-font: "Poppins", sans-serif;
 .icon-sm {
   font-size: 17px;
 }
+.btn {
+  padding: 0.4em;
+  font-size: 16px;
+  border: none;
+  font-family: $main-font;
+  color: $text-color-light;
+  background-color: darken($link-color, 20%);
+  width: 30%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $navigation-color;
+    color: white;
+  }
+}

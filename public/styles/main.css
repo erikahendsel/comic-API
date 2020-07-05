@@ -7,6 +7,24 @@
   font-size: 17px;
 }
 
+.btn {
+  padding: 0.4em;
+  font-size: 16px;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: #b87b1b;
+  width: 30%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #130121;
+  color: white;
+}
+
 .menu {
   position: fixed;
   background-color: #130121;
@@ -94,7 +112,7 @@
   font-size: 14px;
 }
 
-.comic-container {
+.comics .comic-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,21 +125,37 @@
           box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
-.comic-container .comic-image {
+.comics .comic-container .comic-image {
   width: 60px;
   height: auto;
   margin-right: 10px;
   pointer-events: none;
 }
 
-.comic-container .comic-title,
-.comic-container .comic-price {
+.comics .comic-container .comic-title,
+.comics .comic-container .comic-price {
   font-size: 14px;
   pointer-events: none;
 }
 
-.comic-container .comic-text-container {
+.comics .comic-container .comic-text-container {
   pointer-events: none;
+}
+
+.comics .max-fetch-notice {
+  padding: 0.3em;
+  background-color: #130121;
+}
+
+.comics .fetch-btn-container {
+  position: relative;
+  margin: 0.3em;
+  text-align: center;
+}
+
+.comics .fetch-btn-container .fetch-more-btn {
+  width: 100%;
+  padding: 0.6em 0.4em;
 }
 
 .single-comic-container {
@@ -167,30 +201,12 @@
   display: flex;
 }
 
-.search-container form input,
-.search-container form button {
+.search-container form input {
   padding: 0.4em;
   font-size: 16px;
   border: none;
   font-family: "Poppins", sans-serif;
-}
-
-.search-container form input {
   width: 70%;
-}
-
-.search-container form button {
-  color: #fff;
-  background-color: #b87b1b;
-  width: 30%;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.search-container form button:hover {
-  background-color: #130121;
-  color: white;
 }
 
 .search-container .input-message {
@@ -243,5 +259,9 @@ body {
   margin-bottom: 55px;
   background-color: #6504af;
   color: #fff;
+}
+
+a {
+  color: #e6ad53;
 }
 /*# sourceMappingURL=main.css.map */

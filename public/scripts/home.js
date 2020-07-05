@@ -1,4 +1,8 @@
 const seeMoreBtn = document.createElement("button");
+const seeMoreBtnContainer = document.createElement("div");
+seeMoreBtnContainer.classList.add("fetch-btn-container");
+seeMoreBtnContainer.appendChild(seeMoreBtn);
+seeMoreBtn.classList.add("btn", "fetch-more-btn");
 seeMoreBtn.textContent = `See more`;
 let offset = 0;
 
@@ -9,7 +13,7 @@ async function getComics() {
   const comic_results = comic_json.data.results;
   console.log(comic_json);
   comicList(comic_results);
-  allComics.appendChild(seeMoreBtn);
+  allComics.appendChild(seeMoreBtnContainer);
   seeMoreBtn.addEventListener("click", seeMoreBtnClick);
 }
 
@@ -21,8 +25,11 @@ function openComic(event) {
 getComics();
 
 function seeMoreBtnClick() {
-  if (offset >= 500) {
-    console.log("not allowed to load more than 500 comics per page");
+  if (offset >= 100) {
+    const maxFetchLimitReached = document.createElement("p");
+    maxFetchLimitReached.classList.add("max-fetch-notice");
+    maxFetchLimitReached.innerHTML = `Maximum amount of comics loaded. Please go to the search page to find your desired comic.<br> <a href='./search.html'>Go to search page</a>`;
+    allComics.appendChild(maxFetchLimitReached);
     return;
   } else {
     offset += 100;
