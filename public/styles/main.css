@@ -14,7 +14,6 @@
   font-family: "Poppins", sans-serif;
   color: #fff;
   background-color: #b87b1b;
-  width: 30%;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -184,11 +183,19 @@
   text-align: center;
   font-size: 2rem;
   margin-top: -3px;
-  margin-bottom: 10px;
 }
 
 .single-comic-container .comic-sub-container .comic-text-container a {
   color: #e6ad53;
+}
+
+.single-comic-container .comic-sub-container .comic-text-container button {
+  margin-bottom: 0.5em;
+}
+
+.single-comic-container .comic-sub-container .comic-text-container button i,
+.single-comic-container .comic-sub-container .comic-text-container button svg {
+  pointer-events: none;
 }
 
 .search-container {
@@ -207,6 +214,10 @@
   border: none;
   font-family: "Poppins", sans-serif;
   width: 70%;
+}
+
+.search-container form .submit-btn {
+  width: 30%;
 }
 
 .search-container .input-message {

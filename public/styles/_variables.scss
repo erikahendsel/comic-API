@@ -16,7 +16,7 @@ $main-font: "Poppins", sans-serif;
   font-family: $main-font;
   color: $text-color-light;
   background-color: darken($link-color, 20%);
-  width: 30%;
+  // width: 30%;
   cursor: pointer;
   transition: all 0.3s ease;
   &:hover {

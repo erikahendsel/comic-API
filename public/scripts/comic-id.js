@@ -20,6 +20,7 @@ function singleComicDetails(data) {
     const singleComicPageCount = comic.pageCount;
     const comicSubContainer = document.createElement("div");
     const comicTextContainer = document.createElement("div");
+    const favoriteComicBtn = document.createElement("button");
     const comicHeadingContainer = document.createElement("div");
     const comicImageContainer = document.createElement("div");
     const comicImage = document.createElement("img");
@@ -63,6 +64,10 @@ function singleComicDetails(data) {
       comicTextContainer.appendChild(comicPrice);
     });
 
+    favoriteComicBtn.classList.add("favorite-btn", "btn");
+    favoriteComicBtn.innerHTML = `<i class="far fa-heart"></i> Favorite`;
+    comicTextContainer.appendChild(favoriteComicBtn);
+
     comicTextContainer.appendChild(comicPageCount);
     comicPageCount.textContent = `Page count: ${singleComicPageCount} pages`;
 
@@ -81,5 +86,11 @@ function singleComicDetails(data) {
       comicDetails.innerHTML = `Click here for this comic summary`;
       comicTextContainer.appendChild(comicDetails);
     });
+
+    favoriteComicBtn.addEventListener("click", favoriteComicClick);
   });
+}
+
+function favoriteComicClick() {
+  addComicToLocalStorage(idFromUrl);
 }

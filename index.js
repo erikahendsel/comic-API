@@ -31,18 +31,28 @@ app.get("/comics/:offset", async (request, response) => {
   const json = await fetch_response.json();
   response.json(json);
 });
-app.get("/id/:comicid", async (request, response) => {
-  const comicid = request.params.comicid;
-  const api_url = `${baseUrl}/${comicid}?${hashedFinalKey}`;
+
+app.get("/favorited-comics/:id", async (request, response) => {
+  const allFavoritedComics = request.params.id;
+  const api_url = `${baseUrl}/${allFavoritedComics}?${hashedFinalKey}`;
+  const fetch_response = await fetch(api_url);
+  const json = await fetch_response.json();
+  response.json(json);
+});
+
+app.get("/search/:search", async (request, response) => {
+  const search = request.params.search;
+  console.log(search);
+  const api_url = `${baseUrl}?titleStartsWith=${search}&limit=${mainLimit}&${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);
   console.log(api_url);
 });
-app.get("/search/:search", async (request, response) => {
-  const search = request.params.search;
-  console.log(search);
-  const api_url = `${baseUrl}?titleStartsWith=${search}&limit=${mainLimit}&${hashedFinalKey}`;
+
+app.get("/id/:comicid", async (request, response) => {
+  const comicid = request.params.comicid;
+  const api_url = `${baseUrl}/${comicid}?${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);

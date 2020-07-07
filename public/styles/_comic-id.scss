@@ -21,10 +21,16 @@
         text-align: center;
         font-size: 2rem;
         margin-top: -3px;
-        margin-bottom: 10px;
       }
       a {
         color: $link-color;
+      }
+      button {
+        margin-bottom: 0.5em;
+        i,
+        svg {
+          pointer-events: none;
+        }
       }
     }
   }

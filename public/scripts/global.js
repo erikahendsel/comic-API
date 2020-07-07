@@ -39,7 +39,7 @@ function comicList(data) {
 
     apiComicPrices.forEach((price) => {
       webComicPrice.classList.add("comic-price");
-      webComicPrice.textContent = `price: ${price.price}`;
+      webComicPrice.textContent = `price: $${price.price}`;
       singleComicTextContainer.appendChild(webComicPrice);
     });
 
@@ -49,4 +49,20 @@ function comicList(data) {
       openComic(apiComicID);
     });
   });
+}
+
+function addComicToLocalStorage(comic) {
+  let favoritedComics;
+
+  if (localStorage.getItem("favoritedComics") === null) {
+    favoritedComics = [];
+  } else {
+    favoritedComics = JSON.parse(localStorage.getItem("favoritedComics"));
+  }
+  if (favoritedComics.includes(comic)) {
+    console.log("I already contain it");
+  } else {
+    favoritedComics.push(comic);
+    localStorage.setItem("favoritedComics", JSON.stringify(favoritedComics));
+  }
 }
