@@ -198,6 +198,19 @@
   pointer-events: none;
 }
 
+.comic-text-container .favorite-btn.active {
+  background-color: #130121;
+}
+
+.comic-text-container .favorite-btn.active:hover {
+  background-color: #b87b1b;
+}
+
+.comic-text-container .favorite-btn.active i,
+.comic-text-container .favorite-btn.active svg {
+  color: red;
+}
+
 .search-container {
   margin: 0.6em 0.3em;
 }

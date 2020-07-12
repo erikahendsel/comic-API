@@ -1,0 +1,14 @@
+.comic-text-container {
+  .favorite-btn {
+    &.active {
+      background-color: $navigation-color;
+      &:hover {
+        background-color: darken($link-color, 20%);
+      }
+      i,
+      svg {
+        color: red;
+      }
+    }
+  }
+}

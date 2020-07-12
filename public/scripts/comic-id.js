@@ -64,8 +64,17 @@ function singleComicDetails(data) {
       comicTextContainer.appendChild(comicPrice);
     });
 
+    const favoritedComics = JSON.parse(localStorage.getItem("favoritedComics"));
     favoriteComicBtn.classList.add("favorite-btn", "btn");
-    favoriteComicBtn.innerHTML = `<i class="far fa-heart"></i> Favorite`;
+    if (
+      localStorage.getItem("favoritedComics") === null ||
+      !favoritedComics.includes(idFromUrl)
+    ) {
+      favoriteComicBtn.innerHTML = `<i class="far fa-heart"></i> Favorite`;
+    } else {
+      favoriteComicBtn.classList.add("active");
+      favoriteComicBtn.innerHTML = `<i class="fas fa-heart"></i> Unfavorite`;
+    }
     comicTextContainer.appendChild(favoriteComicBtn);
 
     comicTextContainer.appendChild(comicPageCount);

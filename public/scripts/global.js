@@ -52,6 +52,8 @@ function comicList(data) {
 }
 
 function addComicToLocalStorage(comic) {
+  const favoriteComicBtn = document.querySelector(".favorite-btn");
+  const favoriteComicBtnText = `<i class="fas fa-heart"></i> Favorited`;
   let favoritedComics;
 
   if (localStorage.getItem("favoritedComics") === null) {
@@ -60,9 +62,16 @@ function addComicToLocalStorage(comic) {
     favoritedComics = JSON.parse(localStorage.getItem("favoritedComics"));
   }
   if (favoritedComics.includes(comic)) {
-    console.log("I already contain it");
+    console.log("Removed Item", favoritedComics.indexOf(comic));
+    favoriteComicBtn.classList.remove("active");
+    favoriteComicBtn.innerHTML = `<i class="far fa-heart"></i> Favorite`;
+    favoritedComics.splice(favoritedComics.indexOf(comic), 1);
+    localStorage.setItem("favoritedComics", JSON.stringify(favoritedComics));
   } else {
     favoritedComics.push(comic);
+    console.log("added item");
+    favoriteComicBtn.classList.add("active");
     localStorage.setItem("favoritedComics", JSON.stringify(favoritedComics));
+    favoriteComicBtn.innerHTML = `<i class="fas fa-heart"></i> Unfavorite`;
   }
 }
