@@ -13,7 +13,6 @@
     }
     .comic-title,
     .comic-price {
-      font-size: 14px;
       pointer-events: none;
     }
     .comic-text-container {
@@ -25,12 +24,43 @@
     background-color: $navigation-color;
   }
   .fetch-btn-container {
-    position: relative;
     margin: 0.3em;
     text-align: center;
     .fetch-more-btn {
       width: 100%;
       padding: 0.6em 0.4em;
+    }
+  }
+}
+@media only screen and (min-width: 765px) {
+  .comics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .comic-container {
+      flex: 0 45%;
+      width: 100%;
+      position: relative;
+      .comic-image {
+        width: 200px;
+        margin: auto;
+      }
+      .comic-text-container {
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          rgba(19, 1, 33, 1),
+          rgba(19, 1, 33, 0.8) 70.71%
+        );
+        width: 100%;
+      }
+    }
+    .fetch-btn-container {
+      flex: 100%;
+      .fetch-more-btn {
+        height: 70px;
+      }
     }
   }
 }

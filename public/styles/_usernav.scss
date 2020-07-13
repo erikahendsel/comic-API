@@ -3,6 +3,9 @@
   height: 55px;
   background-color: $navigation-color;
   position: relative;
+  @media only screen and (min-width: 765px) {
+    height: 70px;
+  }
 
   .__profile {
     display: flex;
@@ -16,7 +19,6 @@
       color: #fff;
       text-decoration: none;
       align-items: center;
-      font-size: 14px;
     }
   }
 }

@@ -16,7 +16,7 @@ const ts = new Date().getTime();
 const stringToHash = ts + privatekey + publickey;
 const hash = MD5(stringToHash);
 const baseUrl = "https://gateway.marvel.com/v1/public/comics";
-const mainLimit = 100;
+const mainLimit = 20;
 const hashedFinalKey = "&ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;
 const main_url =
   baseUrl + "?orderBy=-focDate" + "&limit=" + mainLimit + hashedFinalKey;

@@ -23,4 +23,16 @@ body {
 }
 a {
   color: $link-color;
+  font-size: $base-font;
+  @media only screen and (min-width: 765px) {
+    font-size: 20px;
+  }
+}
+p,
+button,
+input {
+  font-size: $base-font;
+  @media only screen and (min-width: 765px) {
+    font-size: $base-font * 1.25;
+  }
 }

@@ -3,15 +3,15 @@ $main-bg: #6504af;
 $link-color: #e6ad53;
 $text-color-light: #fff;
 $main-font: "Poppins", sans-serif;
+$base-font: 1rem;
 .icon {
-  font-size: 25px;
+  font-size: 1.5625rem;
 }
 .icon-sm {
-  font-size: 17px;
+  font-size: 1.0625rem;
 }
 .btn {
   padding: 0.4em;
-  font-size: 16px;
   border: none;
   font-family: $main-font;
   color: $text-color-light;
