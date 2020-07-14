@@ -20,19 +20,22 @@ body {
   margin-bottom: 55px;
   background-color: $main-bg;
   color: #fff;
+  @media only screen and (min-width: 1200px) {
+    background-color: darken($main-bg, 7%);
+  }
 }
 a {
   color: $link-color;
-  font-size: $base-font;
-  @media only screen and (min-width: 765px) {
-    font-size: 20px;
-  }
 }
 p,
+a,
 button,
 input {
   font-size: $base-font;
   @media only screen and (min-width: 765px) {
     font-size: $base-font * 1.25;
+  }
+  @media only screen and (min-width: 1020px) {
+    font-size: $base-font * 1.75;
   }
 }

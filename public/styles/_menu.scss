@@ -1,4 +1,4 @@
-.menu {
+.menu-mobile {
   position: fixed;
   background-color: $navigation-color;
   width: 100%;
@@ -44,8 +44,33 @@
     }
   }
 }
+.menu-desktop {
+  display: none;
+}
 @media only screen and (min-width: 765px) {
   .menu {
     height: 75px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .menu-mobile {
+    display: none;
+  }
+  .menu-desktop {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 20%;
+    background-color: $navigation-color;
+    align-items: center;
+    .menu-bar {
+      ul {
+        display: flex;
+        li {
+          list-style: none;
+          padding: 1.5em 1.7em;
+        }
+      }
+    }
   }
 }

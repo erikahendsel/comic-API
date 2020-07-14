@@ -57,10 +57,16 @@
       }
     }
     .fetch-btn-container {
-      flex: 100%;
+      flex: 95%;
       .fetch-more-btn {
         height: 70px;
       }
     }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .comic-section {
+    margin: 1em 10%;
+    background-color: $main-bg;
   }
 }
