@@ -17,3 +17,24 @@
     height: 1.5rem;
   }
 }
+@media only screen and (min-width: 765px) {
+  .search-container {
+    margin: 0.6em 0.3em;
+    form {
+      // padding-top: 1em;
+      display: flex;
+      input {
+        padding: 0.4em;
+        border: none;
+        font-family: $main-font;
+        width: 40%;
+      }
+      .submit-btn {
+        width: 20%;
+      }
+    }
+    .input-message {
+      height: 1.5rem;
+    }
+  }
+}

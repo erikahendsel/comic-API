@@ -7,11 +7,11 @@ const app = express();
 app.listen(3000, () => console.log("listening at 3000"));
 app.use(express.static("public"));
 //Get function from another file: https://www.stanleyulili.com/node/node-modules-learn-how-to-import-and-use-functions-from-another-file/
-
+//focDate meaning: https://previewsworld.com/FinalOrdersDue#:~:text=For%20comic%20books%20and%20graphic,publishers%20set%20their%20print%20runs.
 const publickey = process.env.PUBLIC_API_KEY;
 const privatekey = process.env.PRIVATE_API_KEY;
 const format = "hardcover";
-const orderBy = "-focDate";
+const orderBy = "-onsaleDate";
 const ts = new Date().getTime();
 const stringToHash = ts + privatekey + publickey;
 const hash = MD5(stringToHash);

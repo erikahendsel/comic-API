@@ -7,13 +7,15 @@
     <title>Marvel</title>
   </head>
   <body>
-    <nav class="menu">
+    <nav class="menu-mobile">
       <ul>
         <li>
-          <a href="./home.html"><i class="fas fa-home"></i>Home</a>
+          <a class="active" href="./home.html"
+            ><i class="fas fa-home"></i>Home</a
+          >
         </li>
         <li>
-          <a class="active" href="./favorited-comics.html"
+          <a href="./favorited-comics.html"
             ><i class="fas fa-book"></i>Comics</a
           >
         </li>
@@ -22,16 +24,41 @@
         </li>
       </ul>
     </nav>
+    <nav class="menu-desktop">
+      <div>
+        <p>LOGO</p>
+      </div>
+      <div class="menu-bar">
+        <ul>
+          <li>
+            <a class="active" href="./home.html"
+              ><i class="fas fa-home"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./favorited-comics.html"
+              ><i class="fas fa-book"></i>Comics</a
+            >
+          </li>
+          <li>
+            <a href="./search.html"><i class="fas fa-search"></i>Search</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <header>
       <div class="user-navigation">
         <div class="__profile">
           <a href="#"><i class="fas fa-user-alt"></i>Profile</a>
         </div>
       </div>
-      <div class="comics"></div>
     </header>
-    <section>
-      <div class="favorited-comics"></div>
+    <section class="comic-section">
+      <!-- <div class="favorited-comics"></div> -->
+      <div class="comic-home-heading">
+        <p>Your favorited comics:</p>
+      </div>
+      <div class="comics"></div>
     </section>
     <footer>
       <div class="footer">

@@ -7,10 +7,12 @@
     <title>Marvel</title>
   </head>
   <body>
-    <nav class="menu">
+    <nav class="menu-mobile">
       <ul>
         <li>
-          <a href="./home.html"><i class="fas fa-home"></i>Home</a>
+          <a class="active" href="./home.html"
+            ><i class="fas fa-home"></i>Home</a
+          >
         </li>
         <li>
           <a href="./favorited-comics.html"
@@ -18,11 +20,31 @@
           >
         </li>
         <li>
-          <a class="active" href="./search.html"
-            ><i class="fas fa-search"></i>Search</a
-          >
+          <a href="./search.html"><i class="fas fa-search"></i>Search</a>
         </li>
       </ul>
+    </nav>
+    <nav class="menu-desktop">
+      <div>
+        <p>LOGO</p>
+      </div>
+      <div class="menu-bar">
+        <ul>
+          <li>
+            <a class="active" href="./home.html"
+              ><i class="fas fa-home"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./favorited-comics.html"
+              ><i class="fas fa-book"></i>Comics</a
+            >
+          </li>
+          <li>
+            <a href="./search.html"><i class="fas fa-search"></i>Search</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <header>
       <div class="user-navigation">
@@ -31,18 +53,18 @@
         </div>
       </div>
     </header>
-    <section>
-      <div class="search-container">
-        <form class="search-from">
-          <label for="search-comic"></label>
-          <input type="text" id="search-comic" name="search-comic" value="" />
-          <button type="submit" class="submit-btn btn">Search</button>
-        </form>
-        <p class="input-message"></p>
-        <p class="total-found"></p>
+    <section class="comic-section">
+      <div class="comic-home-heading">
+        <div class="search-container">
+          <form class="search-from">
+            <label for="search-comic"></label>
+            <input type="text" id="search-comic" name="search-comic" value="" />
+            <button type="submit" class="submit-btn btn">Search</button>
+          </form>
+          <p class="input-message"></p>
+          <p class="total-found"></p>
+        </div>
       </div>
-    </section>
-    <section>
       <div class="comics"></div>
     </section>
     <footer>

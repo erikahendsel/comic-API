@@ -51,3 +51,14 @@
     }
   }
 }
+@media only screen and (min-width: 1200px) {
+  .single-comic-container {
+    .comic-sub-container {
+      .comic-image-container {
+        .single-comic-image {
+          width: 30%;
+        }
+      }
+    }
+  }
+}

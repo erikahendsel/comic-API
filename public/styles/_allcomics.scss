@@ -1,3 +1,8 @@
+.comic-section {
+  .comic-home-heading {
+    padding: 1em 3% 0.5em 3%;
+  }
+}
 .comics {
   .comic-container {
     display: flex;
@@ -5,6 +10,15 @@
     margin: 0.6em 0.3em;
     padding-right: 0.3em;
     box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    &:hover {
+      cursor: pointer;
+      background: linear-gradient(
+        to bottom,
+        rgba(101, 4, 75, 0.69),
+        rgba(19, 1, 33, 0.8) 70.71%
+      );
+    }
+
     .comic-image {
       width: 60px;
       height: auto;
@@ -48,12 +62,12 @@
       .comic-text-container {
         position: absolute;
         bottom: 0;
+        width: 100%;
         background: linear-gradient(
           to top,
           rgba(19, 1, 33, 1),
           rgba(19, 1, 33, 0.8) 70.71%
         );
-        width: 100%;
       }
     }
     .fetch-btn-container {
@@ -66,7 +80,7 @@
 }
 @media only screen and (min-width: 1200px) {
   .comic-section {
-    margin: 1em 10%;
+    margin: 1em 20%;
     background-color: $main-bg;
   }
 }
