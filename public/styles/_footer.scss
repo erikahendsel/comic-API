@@ -1,19 +1,28 @@
 .footer {
   display: flex;
   justify-content: space-around;
+  background-color: darken($sub-bg, 50%);
+  color: $text-color-light;
   .__block {
     display: flex;
     flex-direction: column;
     width: 100%;
+    // padding: 2em 0;
     div {
       padding: 0.6em 0.3em;
       width: 100%;
-      box-shadow: 1px 2px 5px 1px rgba(0, 0, 0, 0.3);
-      font-size: $base-font;
+      font-size: $base-font-size;
       a {
         color: $link-color;
         text-decoration: none;
       }
     }
+  }
+}
+@media only screen and (min-width: 765px) {
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20%;
   }
 }

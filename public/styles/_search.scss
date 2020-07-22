@@ -5,9 +5,10 @@
     display: flex;
     input {
       padding: 0.4em;
-      border: none;
+      border: 1px solid $link-color;
       font-family: $main-font;
       width: 70%;
+      // background-color: lighten($link-color, 22%);
     }
     .submit-btn {
       width: 30%;
@@ -25,7 +26,6 @@
       display: flex;
       input {
         padding: 0.4em;
-        border: none;
         font-family: $main-font;
         width: 40%;
       }
