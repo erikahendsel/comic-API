@@ -75,12 +75,19 @@
     padding: 0 20%;
     background-color: rgba($sub-bg, 0.92);
     align-items: center;
+    .logo {
+      color: $text-color-light;
+    }
     .menu-bar {
       ul {
         display: flex;
         li {
           list-style: none;
           padding: 1.5em 1.7em;
+          i,
+          svg {
+            margin-right: 1px;
+          }
         }
       }
     }

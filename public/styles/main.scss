@@ -14,18 +14,17 @@
   box-sizing: border-box;
 }
 //Calculating screen height because the fixed menu covers a part of the bottom screen.
-//The numbers are based on the menu height. For example: 55px menu height would be 100% - 55/2. And 55/2 = 27.5. I rounded to 27, since the view in between the viewport size would have very tiny bit of white space.
 //Help found:
 // 1. https://css-tricks.com/couple-takes-sticky-footer/
 // 2. https://stackoverflow.com/questions/651317/div-width-100-minus-fixed-amount-of-pixels
 html,
 body {
-  height: calc(100% - 27px);
+  height: calc(100% - 55px);
   @media only screen and (min-width: 765px) {
-    height: calc(100% - 35px);
+    height: calc(100% - 75px);
   }
   @media only screen and (min-width: 1020px) {
-    height: calc(100% - 42px);
+    height: calc(100% - 85px);
   }
   @media only screen and (min-width: 1200px) {
     height: 100%;
