@@ -20,8 +20,5 @@ Note! I suggest running on nodemon since it can see the changes made in index.js
 # GETTING THE KEYS FROM MARVEL
 Get a public and private key from the marvel website. Link: https://developer.marvel.com/
 
-- Once you have the keys create a .env file in the project folder (so outside of the public folder). 
-- Copy and paste the following code into the .env file. Replace marvel_public_key_goes_here and marvel_private_key_goes_here with your keys.
-
-PUBLIC_API_KEY=marvel_public_key_goes_here
-PRIVATE_API_KEY=marvel_private_key_goes_here
+- Once you have the keys rename .env-sample file to .env
+- Add your keys and save the file.
