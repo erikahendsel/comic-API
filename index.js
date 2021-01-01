@@ -3,8 +3,10 @@ const { request } = require("express");
 const fetch = require("node-fetch");
 const MD5 = require("md5");
 require("dotenv").config();
+
 const app = express();
-app.listen(3000, () => console.log("listening at 3000"));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Starting server at ${port}`));
 app.use(express.static("public"));
 //Get function from another file: https://www.stanleyulili.com/node/node-modules-learn-how-to-import-and-use-functions-from-another-file/
 //focDate meaning: https://previewsworld.com/FinalOrdersDue#:~:text=For%20comic%20books%20and%20graphic,publishers%20set%20their%20print%20runs.
