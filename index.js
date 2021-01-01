@@ -25,7 +25,6 @@ const main_url =
 //   baseUrl + comicID123 + "?ts=" + ts + "&apikey=" + publickey + "&hash=" + hash;
 app.get("/comics/:offset", async (request, response) => {
   const requestOffset = request.params.offset;
-  console.log(requestOffset);
   const api_url = `${baseUrl}?orderBy=${orderBy}&limit=${mainLimit}&offset=${requestOffset}${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
@@ -42,12 +41,10 @@ app.get("/favorited-comics/:id", async (request, response) => {
 
 app.get("/search/:search", async (request, response) => {
   const search = request.params.search;
-  console.log(search);
   const api_url = `${baseUrl}?titleStartsWith=${search}&limit=${mainLimit}&${hashedFinalKey}`;
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);
-  console.log(api_url);
 });
 
 app.get("/id/:comicid", async (request, response) => {
@@ -56,5 +53,4 @@ app.get("/id/:comicid", async (request, response) => {
   const fetch_response = await fetch(api_url);
   const json = await fetch_response.json();
   response.json(json);
-  console.log(api_url);
 });

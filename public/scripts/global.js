@@ -1,7 +1,6 @@
 const allComics = document.querySelector(".comics");
 
 function openComic(event) {
-  console.log(event);
   window.open(`comic-id.html#${event}`, "_self");
   return event;
 }
@@ -20,7 +19,6 @@ function comicList(data) {
     singleComicTextContainer.classList.add("comic-text-container");
     webComicImage.classList.add("comic-image");
 
-    // console.log(apiComicImages.length);
     if (apiComicImages.length === 0) {
       webComicImage.src = `assets/images/no-image.jpg`;
       singleComicContainer.appendChild(webComicImage);
@@ -62,14 +60,14 @@ function addComicToLocalStorage(comic) {
     favoritedComics = JSON.parse(localStorage.getItem("favoritedComics"));
   }
   if (favoritedComics.includes(comic)) {
-    console.log("Removed Item", favoritedComics.indexOf(comic));
+    //Remove comic
     favoriteComicBtn.classList.remove("active");
     favoriteComicBtn.innerHTML = `<i class="far fa-heart"></i> Favorite`;
     favoritedComics.splice(favoritedComics.indexOf(comic), 1);
     localStorage.setItem("favoritedComics", JSON.stringify(favoritedComics));
   } else {
+    //Add comic
     favoritedComics.push(comic);
-    console.log("added item");
     favoriteComicBtn.classList.add("active");
     localStorage.setItem("favoritedComics", JSON.stringify(favoritedComics));
     favoriteComicBtn.innerHTML = `<i class="fas fa-heart"></i> Unfavorite`;

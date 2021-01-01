@@ -11,14 +11,12 @@ async function getComics() {
   const response = await fetch(api_url);
   const comic_json = await response.json();
   const comic_results = comic_json.data.results;
-  console.log(comic_json);
   comicList(comic_results);
   allComics.appendChild(seeMoreBtnContainer);
   seeMoreBtn.addEventListener("click", seeMoreBtnClick);
 }
 
 function openComic(event) {
-  console.log(event);
   window.open(`comic-id.html#${event}`, "_self");
   return event;
 }
@@ -33,7 +31,6 @@ function seeMoreBtnClick() {
     return;
   } else {
     offset += 100;
-    console.log(offset, "type" + typeof offset);
     getComics();
     return offset;
   }

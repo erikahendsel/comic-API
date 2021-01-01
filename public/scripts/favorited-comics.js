@@ -15,7 +15,6 @@ function getComicFromLocalStorage() {
       const api_response = await fetch(api_url_withID);
       const comic_json = await api_response.json();
       comicList(comic_json.data.results);
-      console.log(comic_json.data.results);
     });
   }
 }

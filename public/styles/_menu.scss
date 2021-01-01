@@ -76,7 +76,12 @@
     background-color: rgba($sub-bg, 0.92);
     align-items: center;
     .logo {
-      color: $text-color-light;
+      font-family: 'Fredericka the Great', cursive;
+      a {
+        color: $text-color-light;
+        text-decoration: none;
+        padding: 1em;
+      }
     }
     .menu-bar {
       ul {

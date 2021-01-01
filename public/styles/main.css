@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@400;700&display=swap");
 .icon {
   font-size: 1.5625rem;
 }
@@ -123,7 +123,12 @@
             align-items: center;
   }
   .menu-desktop .logo {
+    font-family: 'Fredericka the Great', cursive;
+  }
+  .menu-desktop .logo a {
     color: #fff;
+    text-decoration: none;
+    padding: 1em;
   }
   .menu-desktop .menu-bar ul {
     display: -webkit-box;
@@ -375,7 +380,7 @@
 }
 
 .search-container {
-  margin: 0.6em 0.3em;
+  margin: 1em 0.3em 0.6em 0.3em;
 }
 
 .search-container form {
@@ -400,9 +405,6 @@
 }
 
 @media only screen and (min-width: 765px) {
-  .search-container {
-    margin: 0.6em 0.3em;
-  }
   .search-container form {
     display: -webkit-box;
     display: -ms-flexbox;
