@@ -8,8 +8,7 @@ Open a terminal in the project folder and do the following:
 
 In the command-line write: 
 1) npm install
-2) 
-To open the project in a local server write: 
+2) To open the project in a local server write: 
 - node index.js
 OR
 - nodemon index.js 
